@@ -1,0 +1,6 @@
+apiKey: "AIzaSyCQdSz6pN7OJyUWdUC8OUpVHE2rj8xNSTw",
+authDomain: "calcul1-4c2f9.firebaseapp.com",
+projectId: "calcul1-4c2f9",
+storageBucket: "calcul1-4c2f9.appspot.com",
+messagingSenderId: "973017548247",
+appId: "1:973017548247:web:a55c0c8bfa59d2bc13b792"

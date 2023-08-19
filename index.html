@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Presupuestos</title>
+    <link rel="stylesheet" href="/estilos.css">
+</head>
+<body>
+    <div class="content">
+        <input type="name" id="name" placeholder="nombre">
+        <input type="number" id="prod" placeholder="Ingresos">
+        <input type="number" id="prec" placeholder="Gastos">
+    </div>
+    <button id="calculate">Calcular</button>
+    <button id="loadButton">Cargar Datos</button> <!-- Agrega el botón aquí -->
+    
+
+    <div id="result"></div>
+
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>Nombre del gasto</th>
+                <th>Ingreso</th>
+                <th>Gasto</th>
+                <th>presupuesto</th>
+                <th>fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se insertarán las filas de datos -->
+        </tbody>
+    </table>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+    <script src="/calculadora.js"></script>    
+</body>
+</html>

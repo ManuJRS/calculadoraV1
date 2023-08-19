@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 100;
+    justify-content: center;
+    align-items: center;
+    min-height: 10vh;
+    background-color: #f0f0f0;
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .calculator {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #007bff;
+    border: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    cursor: pointer;
+    width: 10%;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  #result {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+ #dataTable {
+  margin-top: 100px;
+ }
+ 
+ .gasto-cell {
+  background-color: #ffcccc; /* Color de fondo para celdas de gastos */
+}
+  
