@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const calculateButton = document.getElementById("calculate");
   const resultDiv = document.getElementById("result");
 
-  // Configuración de Firebase (reemplaza con tus propias credenciales)
+  // Aquí se introducen las credenciales que me dieron en firebase
   const firebaseConfig = {
       apiKey: "AIzaSyCQdSz6pN7OJyUWdUC8OUpVHE2rj8xNSTw",
       authDomain: "calcul1-4c2f9.firebaseapp.com",
@@ -12,18 +12,21 @@ document.addEventListener("DOMContentLoaded", function () {
       appId: "web:a55c0c8bfa59d2bc13b792"
   };
 
-  // Inicializa Firebase
+  // Iniciamos Firebase
   firebase.initializeApp(firebaseConfig);
 
-  // Obtén una referencia a la base de datos Firestore
+  // La constante db almacena una instancia de la base de datos en firestore, mientras que el firebase.firestore(); proporciona acceso a firestore
   const db = firebase.firestore();
+  // Con esto estoy agregando filas a la tabla tomando el id de la tabla con dataTable
   const dataTable = document.getElementById("dataTable").getElementsByTagName('tbody')[0];
-  const loadButton = document.getElementById("loadButton"); // Obtén referencia al botón
+  // Con esto se activa la funcionalidad del loadButton
+  const loadButton = document.getElementById("loadButton");
 
 // Consulta los datos de Firestore y construye las filas de la tabla
 loadButton.addEventListener("click", () => {
     db.collection("resultados").orderBy("timestamp").get().then((querySnapshot) => {
-        dataTable.innerHTML = ""; // Limpia la tabla antes de cargar nuevos datos
+        
+        dataTable.innerHTML = ""; 
 
         querySnapshot.forEach((doc) => {
             const data = doc.data();
@@ -37,24 +40,26 @@ loadButton.addEventListener("click", () => {
 
             const cellGastos = newRow.insertCell(2);
             cellGastos.textContent = formatCurrency(data.gastos);
-            cellGastos.classList.add("gasto-cell"); // Asi se agrega la clase para celdas de gastos
+            // Asi se agrega la clase para celdas de gastos
+            cellGastos.classList.add("gasto-cell"); 
 
             const cellTotal = newRow.insertCell(3);
             cellTotal.textContent = formatCurrency(data.total);
 
             const cellFecha = newRow.insertCell(4);
             if (data.timestamp) {
-                // Suponiendo que data.fecha contiene un timestamp
                 const fecha = data.timestamp.toDate();
-                const fechaHora = fecha.toLocaleString(); // Obtiene la fecha y la hora en formato local
+                // Obtiene la fecha y la hora en formato local
+                const fechaHora = fecha.toLocaleString();
                 cellFecha.textContent = fechaHora;
             } else {
-                cellFecha.textContent = "N/A"; // Mostrar "N/A" si no hay fecha
+                // Mostrar "sin fecha" si no hay fecha
+                cellFecha.textContent = "Sin Fecha"; 
             }
         });
     });
 });
-
+//Con esto le estoy dando el formato a moneda a los valores de la tabla
 function formatCurrency(amount) {
     return "💲" + amount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }

@@ -4,37 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Presupuestos</title>
+    <link rel="stylesheet" href="/bootstrapCSS.css">
     <link rel="stylesheet" href="/estilos.css">
 </head>
 <body>
-    <div class="content">
-        <input type="name" id="name" placeholder="nombre">
-        <input type="number" id="prod" placeholder="Ingresos">
-        <input type="number" id="prec" placeholder="Gastos">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-6 my-4">
+                <h1>Control de ingresos y gastos</h1>
+            </div>
+            <div class="col-md-3">
+
+            </div>
+        </div>
     </div>
-    <button id="calculate">Calcular</button>
-    <button id="loadButton">Cargar Datos</button> <!-- Agrega el botón aquí -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-6">
+
+                <div class="card my-4">
+                    <div class="card-body">
+                        <div class="form-floating">
+                            <input class="form-control my-3" type="name" id="name" placeholder="nombre">
+                            <label for="name">Nombre</label>
+                        </div>
+                        <div class="form-floating">
+                            <input class="form-control my-3" type="number" id="prod" placeholder="Ingresos">
+                            <label for="prod">Ingreso</label>
+                        </div>
+                        <div class="form-floating">
+                            <input class="form-control my-3" type="number" id="prec" placeholder="Gastos">
+                            <label for="prec">Gastos</label>
+                        </div>
+                        <div class="my-2" id="result"></div>
+                        <button class="btn btn-primary" id="calculate">Calcular</button>
+                        <button class="btn btn-secondary" id="loadButton">Cargar Datos</button> <!-- Boton de cargar datos -->
+                    </div>
+                  </div>
+
+            </div>
+            <div class="col-md-3">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid overflow-y-hidden">
+        <div class="row">
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-6">
+                <table class="table table-striped" id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Ingresos</th>
+                            <th class="gasto-cell">Gastos</th>
+                            <th>presupuesto</th>
+                            <th>fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aquí se insertarán las filas de datos -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-3">
+
+            </div>
+        </div>
+    </div>
+
     
-
-    <div id="result"></div>
-
-    <table id="dataTable">
-        <thead>
-            <tr>
-                <th>Nombre del gasto</th>
-                <th>Ingreso</th>
-                <th>Gasto</th>
-                <th>presupuesto</th>
-                <th>fecha</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Aquí se insertarán las filas de datos -->
-        </tbody>
-    </table>
 
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
     <script src="/calculadora.js"></script>    
+    <script src="/BootstrapJS.js"></script>
 </body>
 </html>
